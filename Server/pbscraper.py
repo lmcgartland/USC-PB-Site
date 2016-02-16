@@ -9,7 +9,7 @@ import json
 #friends = graph.get_connections("me", "friends")
 #print friends
 
-# pageId = '484621014888154'
+pageId = '484621014888154'
 # url = 'https://graph.facebook.com/v2.5/' + pageId + '/events/?access_token=' + token
 
 # r = requests.get(url)
@@ -26,6 +26,7 @@ app_secret = "89ef59694498ae2f12e72f482b38283a"
 url = "https://graph.facebook.com/v2.2/oauth/access_token?grant_type=fb_exchange_token&client_id="+app_id+"&client_secret="+app_secret+"&fb_exchange_token="+short_lived_token
 url = "https://graph.facebook.com/v2.2/me?access_token=CAAZABkTpICPwBADy5RAOk0rz45ilapPtgxyvB9dneiYfeVxlON4nUho8P9iLv02xi8ZCEm8iFU0npwSGv0jIAJJT4GNDFPlCyd6aEAAZCN5VEQbifTWo1ZCW9ufhKtYdkOMXkCQYsOkBZA8ENZCtqMxkERGtIKr2dQajEll9ZApY2zPZCuS3vjxzWBYTyRapZB9IZD"
 url = "https://graph.facebook.com/v2.2/1039879799392091/accounts?access_token=CAAZABkTpICPwBADy5RAOk0rz45ilapPtgxyvB9dneiYfeVxlON4nUho8P9iLv02xi8ZCEm8iFU0npwSGv0jIAJJT4GNDFPlCyd6aEAAZCN5VEQbifTWo1ZCW9ufhKtYdkOMXkCQYsOkBZA8ENZCtqMxkERGtIKr2dQajEll9ZApY2zPZCuS3vjxzWBYTyRapZB9IZD"
+url = 'https://graph.facebook.com/v2.5/' + pageId + '/events/?access_token=' + 'CAAZABkTpICPwBADy5RAOk0rz45ilapPtgxyvB9dneiYfeVxlON4nUho8P9iLv02xi8ZCEm8iFU0npwSGv0jIAJJT4GNDFPlCyd6aEAAZCN5VEQbifTWo1ZCW9ufhKtYdkOMXkCQYsOkBZA8ENZCtqMxkERGtIKr2dQajEll9ZApY2zPZCuS3vjxzWBYTyRapZB9IZD'
 
 r = requests.get(url)
 print r.text
