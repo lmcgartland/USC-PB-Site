@@ -9,6 +9,27 @@ $name = $_POST['name'];
 $visitor_email = $_POST['email'];
 $message = $_POST['message'];
 
+$first_name = $_POST['first_name'];
+$last_name = $_POST['last_name'];
+$user_email = $_POST['user_email'];
+$organization = $_POST['organization'];
+
+$event_title = $_POST['event_title'];
+$event_month = $_POST['event_month'];
+$event_date = $_POST['event_date'];
+$event_time = $_POST['event_time'];
+$event_location = $_POST['event_location'];
+
+$facebook_cover_photo = $_POST['facebook_cover_photo'];
+$profile_picture = $_POST['profile_picture'];
+$a_11x17_poster = $_POST['a_11x17_poster'];
+$snapchat_geofilter = $_POST['a_11x17_poster'];
+$shirt_design = $_POST['shirt_design'];
+$other_artwork = $_POST['other_artwork'];
+
+$description = $_POST['description'];
+$other_notes = $_POST['other_notes'];
+
 //Validate first
 if(empty($name)||empty($visitor_email)) 
 {
@@ -23,13 +44,31 @@ if(IsInjected($visitor_email))
 }
 
 $email_from = 'mcgartla@usc.edu';//<== update the email address
-$email_subject = "New Form submission";
-$email_body = "You have received a new message from the user $name.\n".
-    "Here is the message:\n $message".
+$email_subject = "Graphics Request Case #";
+$email_body = "You have received a new request from $first_name $last_name.\n".
+    "Here are the details:\n".
+    "Name: $first_name $last_name\n"
+    "Email: $user_email\n"
+    "Organization: $organization\n"
+    "Event Details: \n" 
+    "$event_title\n"
+    "$event_month $event_date $event_time\n"
+    "$event_location\n\n"
+    "Required Materials\n"
+    "$facebook_cover_photo\n"
+    "$profile_picture\n"
+    "$a_11x17_poster\n"
+    "$snapchat_geofilter\n"
+    "$shirt_design\n"
+    "$other_artwork\n"
+    "Description\n\n"
+    "$description\n"
+    "$other_notes\n";
+
     
 $to = "luke.mcgartland@gmail.com";//<== update the email address
-$headers = "From: $email_from \r\n";
-$headers .= "Reply-To: $visitor_email \r\n";
+$headers = "From: $user_email \r\n";
+$headers .= "Reply-To: $user_email \r\n";
 //Send the email!
 mail($to,$email_subject,$email_body,$headers);
 //done. redirect to thank-you page.
