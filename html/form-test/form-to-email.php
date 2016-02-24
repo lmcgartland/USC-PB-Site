@@ -121,8 +121,8 @@ $attachment
 --_1_$boundary--";
 
 //Send the email!
-mail($to,$email_subject,$message,$headers);
-
+$ok = mail($to,$email_subject,$message,$headers);
+echo "$ok";
 //done. redirect to thank-you page.
 header('Location: thank-you.html');
 
