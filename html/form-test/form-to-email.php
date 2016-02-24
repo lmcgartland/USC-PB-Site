@@ -23,7 +23,7 @@ $event_location = $_POST['event_location'];
 $facebook_cover_photo = $_POST['facebook_cover_photo'];
 $profile_picture = $_POST['profile_picture'];
 $a_11x17_poster = $_POST['a_11x17_poster'];
-$snapchat_geofilter = $_POST['a_11x17_poster'];
+$snapchat_geofilter = $_POST['snapchat_geofilter'];
 $shirt_design = $_POST['shirt_design'];
 $other_artwork = $_POST['other_artwork'];
 
@@ -46,7 +46,7 @@ if(IsInjected($user_email))
 $email_from = 'mcgartla@usc.edu';//<== update the email address
 $email_subject = "Graphics Request Case #";
 $email_body = "You have received a new request from $first_name $last_name.\n".
-    "Here are the details:\n".
+    "Here are the details:\n\n".
     "Name: $first_name $last_name\n".
     "Email: $user_email\n".
     "Organization: $organization\n".
