@@ -74,8 +74,7 @@ if(IsInjected($user_email))
 
 //$email_from = 'mcgartla@usc.edu';//<== update the email address
 $email_subject = "Graphics Request Case $date";
-$email_body = "You have received a new request from $first_name $last_name.\n".
-    "Here are the details:\n\n".
+$email_body = "Graphics Request Details:\n\n".
     "Name: $first_name $last_name\n".
     "Email: $user_email\n".
     "Organization: $organization\n".
@@ -120,6 +119,12 @@ $attachment
 //$message = $email_body;
 //Send the email!
 mail($to,$email_subject,$message,$headers);
+
+$receipt = "Here is your receipt for your graphics request. Please send any follow up emails to pbgraphics@usc.edu and include your case number in the subject.\n\n$email_body"
+$receipt_headers = "From: pbgraphics@usc.edu \r\n";
+$receipt_headers .= "Reply-To: pbgraphics@usc.edu";
+mail($user_email,$email_subject,$reciept,$receipt_headers);
+
 debug_to_console( "DONE" );
 
 //done. redirect to thank-you page.
