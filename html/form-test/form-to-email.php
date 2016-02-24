@@ -33,22 +33,22 @@ $other_notes = $_POST['other_notes'];
 
 $materials = "";
 if (!empty($facebook_cover_photo)) {
-  $materials .= "- $facebook_cover_photo\n"
+  $materials .= "- $facebook_cover_photo\n";
 }
 if (!empty($profile_picture)) {
-  $materials .= "- $profile_picture\n"
+  $materials .= "- $profile_picture\n";
 }
 if (!empty($a_11x17_poster)) {
-  $materials .= "- $a_11x17_poster\n"
+  $materials .= "- $a_11x17_poster\n";
 }
 if (!empty($snapchat_geofilter)) {
-  $materials .= "- $snapchat_geofilter\n"
+  $materials .= "- $snapchat_geofilter\n";
 }
 if (!empty($shirt_design)) {
-  $materials .= "- $shirt_design\n"
+  $materials .= "- $shirt_design\n";
 }
 if (!empty($other_artwork)) {
-  $materials .= "- $other_artwork\n"
+  $materials .= "- $other_artwork\n";
 }
 
 
