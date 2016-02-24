@@ -92,7 +92,7 @@ $email_body = "You have received a new request from $first_name $last_name.\n".
 
     
 $to = "luke.mcgartland@gmail.com";//<== update the email address
-//$boundary =md5(date('r', time())); 
+$boundary =md5(date('r', time())); 
 
 $headers = "From: $user_email \r\n";
 $headers .= "Reply-To: $user_email \r\n";
