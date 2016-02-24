@@ -46,24 +46,24 @@ if(IsInjected($user_email))
 $email_from = 'mcgartla@usc.edu';//<== update the email address
 $email_subject = "Graphics Request Case #";
 $email_body = "You have received a new request from $first_name $last_name.\n".
-    // "Here are the details:\n".
-    // "Name: $first_name $last_name\n"
-    // "Email: $user_email\n"
-    // "Organization: $organization\n"
-    // "Event Details: \n" 
-    // "$event_title\n"
-    // "$event_month $event_date $event_time\n"
-    // "$event_location\n\n"
-    // "Required Materials\n"
-    // "$facebook_cover_photo\n"
-    // "$profile_picture\n"
-    // "$a_11x17_poster\n"
-    // "$snapchat_geofilter\n"
-    // "$shirt_design\n"
-    // "$other_artwork\n"
-    // "Description\n\n"
-    // "$description\n"
-    // "$other_notes"
+    "Here are the details:\n".
+    "Name: $first_name $last_name\n".
+    "Email: $user_email\n".
+    "Organization: $organization\n".
+    "Event Details: \n".
+    "$event_title\n".
+    "$event_month $event_date $event_time\n".
+    "$event_location\n\n".
+    "Required Materials\n".
+    "$facebook_cover_photo\n".
+    "$profile_picture\n".
+    "$a_11x17_poster\n".
+    "$snapchat_geofilter\n".
+    "$shirt_design\n".
+    "$other_artwork\n".
+    "Description\n\n".
+    "$description\n".
+    "$other_notes".
 
     
 $to = "luke.mcgartland@gmail.com";//<== update the email address
