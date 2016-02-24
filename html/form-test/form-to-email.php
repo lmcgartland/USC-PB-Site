@@ -60,10 +60,11 @@ $email_body = "You have received a new request from $first_name $last_name.\n".
     "$a_11x17_poster\n".
     "$snapchat_geofilter\n".
     "$shirt_design\n".
-    "$other_artwork\n".
-    "Description\n\n".
-    "$description\n".
-    "$other_notes".
+    "$other_artwork\n\n".
+    "Description\n".
+    "$description\n\n".
+    "Other Notes\n".
+    "$other_notes";
 
     
 $to = "luke.mcgartland@gmail.com";//<== update the email address
