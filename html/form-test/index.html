@@ -1,26 +1,54 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<!DOCTYPE HTML PUBLIC> 
 <html>
 <head>
-	<title>PHP form to email sample form</title>
-<!-- define some style elements-->
-<style>
-label,a 
-{
-	font-family : Arial, Helvetica, sans-serif;
-	font-size : 12px; 
-}
+	<title>Graphics Request Form</title>
+	<!-- define some style elements-->
+	<style>
+		body{
+			margin: 0px;
+			padding: 25px;
+			background-color: #DDDDDD;
+			font-family: "Helvetica";
+			font-size: 18px;
+		}
+		.graphics_form{
+			min-width: 400px;
+			width: 50vw;
+			max-width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 25px;
+			background-color: #FFFFFF;
+		}
+		.button {
+			display: inline-block;
+			border-radius: 4px;
+			background-color: #f4511e;
+			border: none;
+			color: #FFFFFF;
+			text-align: center;
+			padding: 5px;
+			width: 200px;
+			transition: all 0.5s;
+			cursor: pointer;
+			font-size: 18px;
 
-</style>	
-<!-- a helper script for vaidating the form-->
-<script language="JavaScript" src="scripts/gen_validatorv31.js" type="text/javascript"></script>
+		}
+		textarea{
+			width: 100%;
+			resize: vertical;
+		}
+	</style>	
+	<!-- a helper script for vaidating the form-->
+	<script language="JavaScript" src="scripts/gen_validatorv31.js" type="text/javascript"></script>
 </head>
 
 
 <body>
 
-<!-- Start code for the form-->
-<form method="post" name="myemailform" action="form-to-email.php">
-	<p>
+	<!-- Start code for the form-->
+	<form class="graphics_form" method="post" name="myemailform" action="form-to-email.php">
+	<!-- <p>
 		<label for='name'>Enter Name: </label><br>
 		<input type="text" name="name">
 	</p>
@@ -32,7 +60,89 @@ label,a
 		<label for='message'>Enter Message:</label> <br>
 		<textarea name="message"></textarea>
 	</p>
-	<input type="submit" name='submit' value="submit">
+	<input type="submit" name='submit' value="submit"> -->
+	First Name<br>
+	<input type="text" name="first_name"><br><br>
+	Last Name<br>
+	<input type="text" name="last_name"><br><br>
+	Email<br>
+	<input type="text" name="user_email"><br><br>
+	Organization<br>
+	<select name="organization">
+		<option value="Concerts Committee">Concerts Committee</option>
+		<option value="Performing Arts Committee">Performing Arts Committee</option>
+		<option value="Speakers Committee">Speakers Committee</option>
+		<option value="Special Events Committee">Special Events Committee</option>
+		<option value="Trojan Pride">Trojan Pride</option>
+		<option value="Academic Culture Assembly">Academic Culture Assembly</option>
+		<option value="Asian Pacific America Student Assembly">Asian Pacific America Student Assembly</option>
+		<option value="USC Black Student Assembly">USC Black Student Assembly</option>
+		<option value="Environmental Student Assembly">Environmental Student Assembly</option>
+		<option value="International Student Assembly">International Student Assembly</option>
+		<option value="Latina/o Student Assembly">Latina/o Student Assembly</option>
+		<option value="Political Student Assembly">Political Student Assembly</option>
+		<option value="Queer & Ally Student Assembly">Queer & Ally Student Assembly</option>
+		<option value="Women's Student Assembly">Women's Student Assembly</option>
+
+
+
+	</select>
+	<br><br>
+	<!--Other_________<br>-->
+	Event Title<br>
+	<input type="text" name="event_title"><br><br>
+	Event Date<br>
+	<select name="event_month">
+		<option value="January">January</option>
+		<option value="February">February</option>
+		<option value="March">March</option>
+		<option value="April">April</option>
+		<option value="May">May</option>
+		<option value="June">June</option>
+		<option value="July">July</option>
+		<option value="August">August</option>
+		<option value="September">September</option>
+		<option value="October">October</option>
+		<option value="November">November</option>
+		<option value="December">December</option>
+	</select>
+	<select name="event_date">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select><br><br>
+	Event Time<br>
+	<input type="text" name="event_time"><br><br>
+	Event Location<br>
+	<input type="text" name="event_location"><br><br>
+
+	Types of Art Needed<br>
+	<input type="checkbox" name="facebook_cover_photo" value="Facebook Cover Photo">Cover Photo<br>
+	<input type="checkbox" name="profile_picture" value="Profile Picture">Profile Picture<br>
+	<input type="checkbox" name="a_11x17_poster" value="11x17 Poster">11x17 Poster<br>
+	<input type="checkbox" name="snapchat_geofilter" value="Snapchat GeoFilter">Snapchat GeoFilter<br>
+	<input type="checkbox" name="shirt_design" value="T-Shirt Design">T-Shirt Design<br>
+	<!--Other_________<br>-->
+	<br>
+	Other Artwork Needed<br>
+	<input type="text" name="other_artwork"><br><br>
+	<!--Logos (maybe automatically add based on org idk)<br>
+	Reference Materials<br>
+	[Upload]<br>
+	Deadline<br>
+	_________<br>-->
+	Reference Materials (Please Upload multiple files as .zip)<br>
+	<input type="file" name="file" id="file"><br><br>
+	Description/Copy for Graphic:<br>
+	<textarea name="description"></textarea><br>
+	<br>
+	Other Notes<br>
+	<textarea name="other_notes"></textarea><br>
+	<br>
+	<input class="button" type="submit" name='submit' value="Submit"><br><br>
+	Please contact either trabant@usc.edu or partiyel@usc.edu with questions.
 </form>
 <script language="JavaScript">
 // Code for validating the form
@@ -44,7 +154,8 @@ frmvalidator.addValidation("email","req","Please provide your email");
 frmvalidator.addValidation("email","email","Please enter a valid email address"); 
 </script>
 <p>
+<!--
 <a href='http://www.html-form-guide.com/email-form/php-form-to-email.html'
->PHP form to email article page</a>
+>PHP form to email article page</a>-->
 </p>
 </body>

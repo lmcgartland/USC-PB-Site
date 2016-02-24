@@ -61,7 +61,7 @@ $email_body = "You have received a new request from $first_name $last_name.\n".
     "$event_title\n".
     "$event_month $event_date $event_time\n".
     "$event_location\n\n".
-    "Required Materials\n".
+    "Required Materials:\n".
     "$facebook_cover_photo\n".
     "$profile_picture\n".
     "$a_11x17_poster\n".
