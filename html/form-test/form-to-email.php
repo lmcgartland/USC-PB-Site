@@ -30,6 +30,28 @@ $other_artwork = $_POST['other_artwork'];
 $description = $_POST['description'];
 $other_notes = $_POST['other_notes'];
 
+
+$materials = "";
+if (!empty($facebook_cover_photo)) {
+  $materials .= "- $facebook_cover_photo\n"
+}
+if (!empty($profile_picture)) {
+  $materials .= "- $profile_picture\n"
+}
+if (!empty($a_11x17_poster)) {
+  $materials .= "- $a_11x17_poster\n"
+}
+if (!empty($snapchat_geofilter)) {
+  $materials .= "- $snapchat_geofilter\n"
+}
+if (!empty($shirt_design)) {
+  $materials .= "- $shirt_design\n"
+}
+if (!empty($other_artwork)) {
+  $materials .= "- $other_artwork\n"
+}
+
+
 $attachment = chunk_split(base64_encode(file_get_contents($_FILES['file']['tmp_name'])));
 $filename = $_FILES['file']['name'];
 
@@ -62,12 +84,7 @@ $email_body = "You have received a new request from $first_name $last_name.\n".
     "$event_month $event_date $event_time\n".
     "$event_location\n\n".
     "Required Materials:\n".
-    "$facebook_cover_photo\n".
-    "$profile_picture\n".
-    "$a_11x17_poster\n".
-    "$snapchat_geofilter\n".
-    "$shirt_design\n".
-    "$other_artwork\n\n".
+    "$materials\n".
     "Description\n".
     "$description\n\n".
     "Other Notes\n".
@@ -104,7 +121,8 @@ $attachment
 --_1_$boundary--";
 
 //Send the email!
-mail($to,$email_subject,$message,$headers);
+$ok = mail($to,$email_subject,$message,$headers);
+echo "$ok";
 //done. redirect to thank-you page.
 header('Location: thank-you.html');
 
