@@ -121,10 +121,10 @@ $attachment
 --_1_$boundary--";
 
 //Send the email!
-$ok = mail($to,$email_subject,$message,$headers);
-echo "$ok";
+mail($to,$email_subject,$message,$headers);
+
 //done. redirect to thank-you page.
-//header('Location: thank-you.html');
+header('Location: thank-you.html');
 
 
 // Function to validate against any email injection attempts
