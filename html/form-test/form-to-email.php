@@ -121,10 +121,12 @@ $attachment
 --_1_$boundary--";
 
 //Send the email!
+debug_to_console( "$message" );
 mail($to,$email_subject,$message,$headers);
+debug_to_console( "DONE" );
 
 //done. redirect to thank-you page.
-header('Location: thank-you.html');
+//header('Location: thank-you.html');
 
 
 // Function to validate against any email injection attempts
@@ -149,5 +151,13 @@ function IsInjected($str)
     return false;
   }
 }
-   
+function debug_to_console( $data ) {
+
+    if ( is_array( $data ) )
+        $output = "<script>console.log( 'Debug Objects: " . implode( ',', $data) . "' );</script>";
+    else
+        $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
+
+    echo $output;
+}
 ?> 
