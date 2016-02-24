@@ -119,12 +119,11 @@ $attachment
 --_1_$boundary--";
 //$message = $email_body;
 //Send the email!
-debug_to_console( "$attachment" );
 mail($to,$email_subject,$message,$headers);
 debug_to_console( "DONE" );
 
 //done. redirect to thank-you page.
-//header('Location: thank-you.html');
+header('Location: thank-you.html');
 
 
 // Function to validate against any email injection attempts

@@ -40,7 +40,8 @@
 		}
 	</style>	
 	<!-- a helper script for vaidating the form-->
-	<script language="JavaScript" src="scripts/gen_validatorv31.js" type="text/javascript"></script>
+	<script language="JavaScript" src="gen_validatorv4.js"
+    type="text/javascript" xml:space="preserve"></script>
 </head>
 
 
@@ -69,6 +70,7 @@
 	<input type="text" name="user_email"><br><br>
 	Organization<br>
 	<select name="organization">
+		<option value="Organization Not Specified"></option>
 		<option value="Concerts Committee">Concerts Committee</option>
 		<option value="Performing Arts Committee">Performing Arts Committee</option>
 		<option value="Speakers Committee">Speakers Committee</option>
@@ -149,9 +151,12 @@
 // Visit http://www.javascript-coder.com/html-form/javascript-form-validation.phtml
 // for details
 var frmvalidator  = new Validator("myemailform");
-frmvalidator.addValidation("name","req","Please provide your name"); 
-frmvalidator.addValidation("email","req","Please provide your email"); 
-frmvalidator.addValidation("email","email","Please enter a valid email address"); 
+frmvalidator.addValidation("first_name","req","Please provide your first name"); 
+frmvalidator.addValidation("last_name","req","Please provide your last name"); 
+frmvalidator.addValidation("user_email","req","Please provide your email"); 
+frmvalidator.addValidation("user_email","email","Please enter a valid email address"); 
+frmvalidator.addValidation("event_title","req","Please provide your event title"); 
+
 </script>
 <p>
 <!--
