@@ -35,7 +35,7 @@ $filename = $_FILES['file']['name'];
 
 date_default_timezone_set('America/Los_Angeles');
 //$date = date('m/d/Y h:i:s a', time());
-$date = date('Y-m-d H:i:s');
+$date = date('YmdHis');
 
 //Validate first
 if(empty($first_name)||empty($last_name)||empty($user_email)) 
@@ -81,7 +81,6 @@ $headers .= "Reply-To: $user_email \r\n";
 
 $boundary =md5(date('r', time())); 
 
-$headers = "From: webmaster@example.com\r\nReply-To: webmaster@example.com";
 $headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
 
 $message="This is a multi-part message in MIME format.
