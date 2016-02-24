@@ -92,15 +92,13 @@ $email_body = "You have received a new request from $first_name $last_name.\n".
 
     
 $to = "luke.mcgartland@gmail.com";//<== update the email address
-$headers = "From: $user_email \r\n";
-$headers .= "Reply-To: $user_email \r\n";
-
-
 $boundary =md5(date('r', time())); 
 
-$headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
+$headers = "From: $user_email \r\n";
+$headers .= "Reply-To: $user_email \r\n";
+//$headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
 
-$message="This is a multi-part message in MIME format.
+/*$message="This is a multi-part message in MIME format.
 
 --_1_$boundary
 Content-Type: multipart/alternative; boundary=\"_2_$boundary\"
@@ -118,10 +116,10 @@ Content-Transfer-Encoding: base64
 Content-Disposition: attachment 
 
 $attachment
---_1_$boundary--";
-
+--_1_$boundary--";*/
+$message = $email_body;
 //Send the email!
-debug_to_console( "$message" );
+debug_to_console( "$attachment" );
 mail($to,$email_subject,$message,$headers);
 debug_to_console( "DONE" );
 
