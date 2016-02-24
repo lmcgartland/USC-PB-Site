@@ -98,7 +98,7 @@ $headers = "From: $user_email \r\n";
 $headers .= "Reply-To: $user_email \r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
 //$headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
 
-/*$message="This is a multi-part message in MIME format.
+$message="This is a multi-part message in MIME format.
 
 --_1_$boundary
 Content-Type: multipart/alternative; boundary=\"_2_$boundary\"
@@ -116,11 +116,11 @@ Content-Transfer-Encoding: base64
 Content-Disposition: attachment 
 
 $attachment
---_1_$boundary--";*/
+--_1_$boundary--";
 //$message = $email_body;
 //Send the email!
 debug_to_console( "$attachment" );
-mail($to,$email_subject,$email_body,$headers);
+mail($to,$email_subject,$message,$headers);
 debug_to_console( "DONE" );
 
 //done. redirect to thank-you page.
