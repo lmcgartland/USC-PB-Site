@@ -52,8 +52,8 @@ if (!empty($other_artwork)) {
 }
 
 
-$attachment = chunk_split(base64_encode(file_get_contents($_FILES['file']['tmp_name'])));
-$filename = $_FILES['file']['name'];
+//$attachment = chunk_split(base64_encode(file_get_contents($_FILES['file']['tmp_name'])));
+//$filename = $_FILES['file']['name'];
 
 date_default_timezone_set('America/Los_Angeles');
 //$date = date('m/d/Y h:i:s a', time());
@@ -72,7 +72,7 @@ if(IsInjected($user_email))
     exit;
 }
 
-$email_from = 'mcgartla@usc.edu';//<== update the email address
+//$email_from = 'mcgartla@usc.edu';//<== update the email address
 $email_subject = "Graphics Request Case $date";
 $email_body = "You have received a new request from $first_name $last_name.\n".
     "Here are the details:\n\n".
@@ -92,7 +92,7 @@ $email_body = "You have received a new request from $first_name $last_name.\n".
 
     
 $to = "luke.mcgartland@gmail.com";//<== update the email address
-$boundary =md5(date('r', time())); 
+//$boundary =md5(date('r', time())); 
 
 $headers = "From: $user_email \r\n";
 $headers .= "Reply-To: $user_email \r\n";
@@ -117,10 +117,10 @@ Content-Disposition: attachment
 
 $attachment
 --_1_$boundary--";*/
-$message = $email_body;
+//$message = $email_body;
 //Send the email!
 debug_to_console( "$attachment" );
-mail($to,$email_subject,$message,$headers);
+mail($to,$email_subject,$email_body,$headers);
 debug_to_console( "DONE" );
 
 //done. redirect to thank-you page.
