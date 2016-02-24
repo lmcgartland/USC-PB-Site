@@ -30,6 +30,13 @@ $other_artwork = $_POST['other_artwork'];
 $description = $_POST['description'];
 $other_notes = $_POST['other_notes'];
 
+$attachment = chunk_split(base64_encode(file_get_contents($_FILES['file']['tmp_name'])));
+$filename = $_FILES['file']['name'];
+
+date_default_timezone_set('America/Los_Angeles');
+//$date = date('m/d/Y h:i:s a', time());
+$date = date('Y-m-d H:i:s');
+
 //Validate first
 if(empty($first_name)||empty($last_name)||empty($user_email)) 
 {
@@ -44,7 +51,7 @@ if(IsInjected($user_email))
 }
 
 $email_from = 'mcgartla@usc.edu';//<== update the email address
-$email_subject = "Graphics Request Case #";
+$email_subject = "Graphics Request Case $date";
 $email_body = "You have received a new request from $first_name $last_name.\n".
     "Here are the details:\n\n".
     "Name: $first_name $last_name\n".
@@ -70,8 +77,35 @@ $email_body = "You have received a new request from $first_name $last_name.\n".
 $to = "luke.mcgartland@gmail.com";//<== update the email address
 $headers = "From: $user_email \r\n";
 $headers .= "Reply-To: $user_email \r\n";
+
+
+$boundary =md5(date('r', time())); 
+
+$headers = "From: webmaster@example.com\r\nReply-To: webmaster@example.com";
+$headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
+
+$message="This is a multi-part message in MIME format.
+
+--_1_$boundary
+Content-Type: multipart/alternative; boundary=\"_2_$boundary\"
+
+--_2_$boundary
+Content-Type: text/plain; charset=\"iso-8859-1\"
+Content-Transfer-Encoding: 7bit
+
+$email_body
+
+--_2_$boundary--
+--_1_$boundary
+Content-Type: application/octet-stream; name=\"$filename\" 
+Content-Transfer-Encoding: base64 
+Content-Disposition: attachment 
+
+$attachment
+--_1_$boundary--";
+
 //Send the email!
-mail($to,$email_subject,$email_body,$headers);
+mail($to,$email_subject,$message,$headers);
 //done. redirect to thank-you page.
 header('Location: thank-you.html');
 
