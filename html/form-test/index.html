@@ -143,19 +143,26 @@
 	Other Notes<br>
 	<textarea name="other_notes"></textarea><br>
 	<br>
+	Deadline<br>
+	<input type="text" name="deadline"><br><br>
+	<input type="checkbox" name="turnaround" value="three_weeks"> I understand that there is a *3* week turnaround for graphic requests
+	<br><br>
 	<input class="button" type="submit" name='submit' value="Submit"><br><br>
-	Please contact either trabant@usc.edu or partiyel@usc.edu with questions.
+	Contact Devin (trabant@usc.edu) AND Nikoli (partiyel@usc.edu) with questions.
 </form>
 <script language="JavaScript">
 // Code for validating the form
 // Visit http://www.javascript-coder.com/html-form/javascript-form-validation.phtml
 // for details
+// Looks good! We need a space for date needed/deadline. We can assume 3 weeks from when it's submitted, but realistically they may need it sooner/by a specific day.
+
 var frmvalidator  = new Validator("myemailform");
 frmvalidator.addValidation("first_name","req","Please provide your first name"); 
 frmvalidator.addValidation("last_name","req","Please provide your last name"); 
 frmvalidator.addValidation("user_email","req","Please provide your email"); 
 frmvalidator.addValidation("user_email","email","Please enter a valid email address"); 
 frmvalidator.addValidation("event_title","req","Please provide your event title"); 
+frmvalidator.addValidation("turnaround","req","Please acknowledge the turnaround time"); 
 
 </script>
 <p>

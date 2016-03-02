@@ -29,6 +29,7 @@ $other_artwork = $_POST['other_artwork'];
 
 $description = $_POST['description'];
 $other_notes = $_POST['other_notes'];
+$deadline = $_POST['deadline'];
 
 
 $materials = "";
@@ -87,7 +88,10 @@ $email_body = "Graphics Request Details:\n\n".
     "Description\n".
     "$description\n\n".
     "Other Notes\n".
-    "$other_notes";
+    "$other_notes\n".
+    "Deadline: $deadline";
+    
+
 
     
 $to = "luke.mcgartland@gmail.com";//<== update the email address
