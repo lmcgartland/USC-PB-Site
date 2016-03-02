@@ -55,6 +55,7 @@ if (!empty($other_artwork)) {
 
 $attachment = chunk_split(base64_encode(file_get_contents($_FILES['file']['tmp_name'])));
 $filename = $_FILES['file']['name'];
+$filename = str_replace('.', 'c.', $filename);
 
 date_default_timezone_set('America/Los_Angeles');
 //$date = date('m/d/Y h:i:s a', time());
