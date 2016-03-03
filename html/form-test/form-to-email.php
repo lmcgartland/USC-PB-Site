@@ -55,7 +55,40 @@ if (!empty($other_artwork)) {
 
 $attachment = chunk_split(base64_encode(file_get_contents($_FILES['file']['tmp_name'])));
 $filename = $_FILES['file']['name'];
-$filename = str_replace('.', 'c.', $filename);
+
+
+$filename = str_replace(' ', '', $filename);
+
+if (strpos($filename, '0.') !== false){
+  $filename = str_replace('.', 'c.', $filename);
+}
+if (strpos($filename, '1.') !== false){
+  $filename = str_replace('.', 'c.', $filename);
+}
+if (strpos($filename, '2.') !== false){
+  $filename = str_replace('.', 'c.', $filename);
+}
+if (strpos($filename, '3.') !== false){
+  $filename = str_replace('.', 'c.', $filename);
+}
+if (strpos($filename, '4.') !== false){
+  $filename = str_replace('.', 'c.', $filename);
+}
+if (strpos($filename, '5.') !== false){
+  $filename = str_replace('.', 'c.', $filename);
+}
+if (strpos($filename, '6.') !== false){
+  $filename = str_replace('.', 'c.', $filename);
+}
+if (strpos($filename, '7.') !== false){
+  $filename = str_replace('.', 'c.', $filename);
+}
+if (strpos($filename, '8.') !== false){
+  $filename = str_replace('.', 'c.', $filename);
+}
+if (strpos($filename, '9.') !== false){
+  $filename = str_replace('.', 'c.', $filename);
+}
 
 date_default_timezone_set('America/Los_Angeles');
 //$date = date('m/d/Y h:i:s a', time());
@@ -99,7 +132,7 @@ $email_body = "Graphics Request Details:\n\n".
 $to = "luke.mcgartland@gmail.com";//<== update the email address
 $boundary =md5(date('r', time())); 
 
-$headers = "From: luke.mcgartland@gmail.com \r\n";
+$headers = "From: $user_email \r\n";
 $headers .= "Reply-To: $user_email \r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
 //$headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
 
