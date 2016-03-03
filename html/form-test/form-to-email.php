@@ -128,14 +128,15 @@ $attachment
 mail($to,$email_subject,$message,$headers);
 
 $receipt = "Here is your receipt for your graphics request. Please send any follow up emails to pbgraphics@usc.edu and include your case number in the subject.\n\n$email_body";
-$receipt_headers = "From: pbgraphics@usc.edu \r\nReply-To: pbgraphics@usc.edu";
-$receipt_headers .= "MIME-Version: 1.0\r\n";
-$receipt_headers .= "Content-Type: text/html; charset=iso-8859-1\n";
+
+$graphics_email = "pbgraphics@usc.edu";
+$headers = "From: $graphics_email \r\n";
+$headers .= "Reply-To: $graphics_email \r\nMIME-Version: 1.0\r\nContent-Type: text/plain; boundary=\"_1_$boundary\"";
 //$receipt_headers .= "";
 
-mail($user_email,$email_subject,$receipt,$receipt_headers);
+mail($user_email,$email_subject,$receipt,$headers);
 
-debug_to_console( "DONE" );
+//debug_to_console( "DONE" );
 
 //done. redirect to thank-you page.
 //header('Location: thank-you.html');
