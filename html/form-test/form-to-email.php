@@ -99,7 +99,7 @@ $email_body = "Graphics Request Details:\n\n".
 $to = "luke.mcgartland@gmail.com";//<== update the email address
 $boundary =md5(date('r', time())); 
 
-$headers = "From: $user_email \r\n";
+$headers = "From: luke.mcgartland@gmail.com \r\n";
 $headers .= "Reply-To: $user_email \r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
 //$headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
 
