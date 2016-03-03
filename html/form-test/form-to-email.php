@@ -100,6 +100,7 @@ $boundary =md5(date('r', time()));
 
 $headers = "From: $user_email \r\n";
 $headers .= "Reply-To: $user_email \r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
+
 //$headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
 
 $message="This is a multi-part message in MIME format.
@@ -128,6 +129,8 @@ mail($to,$email_subject,$message,$headers);
 
 $receipt = "Here is your receipt for your graphics request. Please send any follow up emails to pbgraphics@usc.edu and include your case number in the subject.\n\n$email_body";
 $receipt_headers = "From: pbgraphics@usc.edu \r\nReply-To: pbgraphics@usc.edu";
+$receipt_headers .= "MIME-Version: 1.0\r\n";
+$receipt_headers .= "Content-Type: text/html; charset=iso-8859-1\n";
 //$receipt_headers .= "";
 
 mail($user_email,$email_subject,$receipt,$receipt_headers);
