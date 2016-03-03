@@ -121,13 +121,15 @@ Content-Disposition: attachment
 
 $attachment
 --_1_$boundary--";
+
 //$message = $email_body;
 //Send the email!
 mail($to,$email_subject,$message,$headers);
 
 $receipt = "Here is your receipt for your graphics request. Please send any follow up emails to pbgraphics@usc.edu and include your case number in the subject.\n\n$email_body";
-$receipt_headers = "From: pbgraphics@usc.edu \r\n";
-$receipt_headers .= "Reply-To: pbgraphics@usc.edu";
+$receipt_headers = "From: pbgraphics@usc.edu \r\nReply-To: pbgraphics@usc.edu\r\n";
+//$receipt_headers .= "";
+
 mail($user_email,$email_subject,$receipt,$receipt_headers);
 
 debug_to_console( "DONE" );
