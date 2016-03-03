@@ -95,18 +95,9 @@ $email_body = "Graphics Request Details:\n\n".
 
 
     
-
-/*$receipt = "Here is your receipt for your graphics request. Please send any follow up emails to pbgraphics@usc.edu and include your case number in the subject.\n\n$email_body";
-$receipt_headers = "From: pbgraphics@usc.edu \r\nReply-To: pbgraphics@usc.edu";
-mail($user_email,$email_subject,$receipt,$receipt_headers);
-
-debug_to_console( "DONE" );*/
-
-
-
-
-$to = "luke.mcgartland@gmail.com, $user_email";//<== update the email address
+$to = "mcgartla@usc.edu";//<== update the email address
 $boundary =md5(date('r', time())); 
+
 $headers = "From: $user_email \r\n";
 $headers .= "Reply-To: $user_email \r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
 //$headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
@@ -135,11 +126,16 @@ $attachment
 //Send the email!
 mail($to,$email_subject,$message,$headers);
 
-debug_to_console( "DONE 2" );
+$receipt = "Here is your receipt for your graphics request. Please send any follow up emails to pbgraphics@usc.edu and include your case number in the subject.\n\n$email_body";
+$receipt_headers = "From: pbgraphics@usc.edu \r\nReply-To: pbgraphics@usc.edu";
+//$receipt_headers .= "";
 
+mail($user_email,$email_subject,$receipt,$receipt_headers);
+
+debug_to_console( "DONE" );
 
 //done. redirect to thank-you page.
-//header('Location: thank-you.html');
+header('Location: thank-you.html');
 
 
 // Function to validate against any email injection attempts
