@@ -70,6 +70,7 @@ if(empty($first_name)||empty($last_name)||empty($user_email))
 
 if(IsInjected($user_email))
 {
+    debug_to_console( "EMAIL INJECTED" );
     echo "Bad email value!";
     exit;
 }
