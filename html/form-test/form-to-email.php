@@ -96,7 +96,7 @@ $email_body = "Graphics Request Details:\n\n".
 
 
     
-$to = "mcgartla@usc.edu";//<== update the email address
+$to = "luke.mcgartland@gmail.com";//<== update the email address
 $boundary =md5(date('r', time())); 
 
 $headers = "From: $user_email \r\n";
