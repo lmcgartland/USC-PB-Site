@@ -208,7 +208,7 @@ try {
 	debug_to_console($result);
 }
 catch (\Exception $e){
-	debug_to_console($e);
+	debug_to_console("{$e->getMessage()}");
 
 }
 
