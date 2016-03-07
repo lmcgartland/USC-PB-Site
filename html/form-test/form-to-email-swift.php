@@ -1,6 +1,6 @@
 <?php
 
-require_once '/home/ec2-user/swiftmailer/lib/swift_required.php';
+require_once './lib/swift_required.php';
 
 //ini_set("include_path", '/home/uscedu5/php:' . ini_get("include_path")  );
 if(!isset($_POST['submit']))
