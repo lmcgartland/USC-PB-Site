@@ -203,9 +203,13 @@ debug_to_console( "created transport" );
 $mailer = Swift_Mailer::newInstance($transport);
 debug_to_console( "created mailer" );
 
-
-$result = $mailer->send($message);
-debug_to_console($result);
+try {
+	$result = $mailer->send($message);
+	debug_to_console($result);
+}
+catch (\Exception $e){
+	debug_to_console($e);
+}
 
 debug_to_console( "DONE" );
 
