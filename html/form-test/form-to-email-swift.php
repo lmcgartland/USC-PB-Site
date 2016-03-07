@@ -194,7 +194,7 @@ $message = Swift_Message::newInstance()
  ;
 debug_to_console( "created message" );
 
-$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl');
+$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 25,'25');
 $transport->setUsername('temp.web.pb@gmail.com');
 $transport->setPassword('vkc-xGm-3dQ-6mT');
 
