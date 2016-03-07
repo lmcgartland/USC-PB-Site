@@ -178,7 +178,7 @@ $message = Swift_Message::newInstance()
   ->setSubject('Your subject')
 
   // Set the From address with an associative array
-  ->setFrom(array('john@doe.com' => 'John Doe'))
+  ->setFrom(array('temp.web.pb@gmail.com' => 'John Doe'))
 
   // Set the To addresses with an associative array
   ->setTo(array('mcgartla@usc.edu', 'luke.mcgartland@gmail.com'))
@@ -197,6 +197,7 @@ debug_to_console( "created message" );
 $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl');
 $transport->setUsername('temp.web.pb@gmail.com');
 $transport->setPassword('vkc-xGm-3dQ-6mT');
+
 debug_to_console( "created transport" );
 
 $mailer = Swift_Mailer::newInstance($transport);
