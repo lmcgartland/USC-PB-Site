@@ -1,6 +1,7 @@
 <?php
 
 require_once './lib/swift_required.php';
+debug_to_console( "got the required" );
 
 //ini_set("include_path", '/home/uscedu5/php:' . ini_get("include_path")  );
 if(!isset($_POST['submit']))
@@ -169,6 +170,7 @@ $to = "luke.mcgartland@gmail.com";//<== update the email address
 
 // mail($user_email,$email_subject,$receipt,$receipt_headers);
 
+debug_to_console( "about to create message" );
 
 $message = Swift_Message::newInstance()
 
@@ -190,12 +192,15 @@ $message = Swift_Message::newInstance()
   // Optionally add any attachments
   //->attach(Swift_Attachment::fromPath('my-document.pdf'))
  ;
+debug_to_console( "created message" );
 
 $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl');
 $transport->setUsername('temp.web.pb@gmail.com');
 $transport->setPassword('vkc-xGm-3dQ-6mT');
+debug_to_console( "created transport" );
 
 $mailer = Swift_Mailer::newInstance($transport);
+debug_to_console( "created mailer" );
 
 
 $result = $mailer->send($message);
