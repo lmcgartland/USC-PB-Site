@@ -191,7 +191,7 @@ $message = Swift_Message::newInstance()
   //->attach(Swift_Attachment::fromPath('my-document.pdf'))
  ;
 
-$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 587,'tls');
+$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl');
 $transport->setUsername('temp.web.pb@gmail.com');
 $transport->setPassword('vkc-xGm-3dQ-6mT');
 
@@ -199,11 +199,12 @@ $mailer = Swift_Mailer::newInstance($transport);
 
 
 $result = $mailer->send($message);
+debug_to_console($result);
 
 debug_to_console( "DONE" );
 
 //done. redirect to thank-you page.
-header('Location: thank-you.html');
+//header('Location: thank-you.html');
 
 
 // Function to validate against any email injection attempts
