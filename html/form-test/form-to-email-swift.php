@@ -194,7 +194,7 @@ $message = Swift_Message::newInstance()
  ;
 debug_to_console( "created message" );
 
-$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl');
+$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl');
 $transport->setUsername('temp.web.pb@gmail.com');
 $transport->setPassword('vkc-xGm-3dQ-6mT');
 
@@ -208,7 +208,8 @@ try {
 	debug_to_console($result);
 }
 catch (\Exception $e){
-	debug_to_console($e);
+	 $response = $e->getMessage()
+	debug_to_console($response);
 }
 
 debug_to_console( "DONE" );
