@@ -196,7 +196,7 @@ debug_to_console( "created message" );
 
 $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 25, 'tls');
 $transport->setUsername('temp.web.pb@gmail.com');
-$transport->setPassword('dcncobfxmhlksoao');
+$transport->setPassword('iikwxuzlvqejlxic');
 
 debug_to_console( "created transport" );
 
