@@ -206,10 +206,11 @@ debug_to_console( "created mailer" );
 try {
 	$result = $mailer->send($message);
 	debug_to_console($result);
+	debug_to_console( "Sent Message" );
 }
 catch (\Exception $e){
+	debug_to_console( "Error" );
 	debug_to_console("{$e->getMessage()}");
-
 }
 
 debug_to_console( "DONE" );
