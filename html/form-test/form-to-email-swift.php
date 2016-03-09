@@ -190,8 +190,12 @@ $message = Swift_Message::newInstance()
   //->addPart('<q>Here is the message itself</q>', 'text/html')
 
   // Optionally add any attachments
-  ->attach(Swift_Attachment::fromPath($filename))
+  //->attach(Swift_Attachment::fromPath($filename))
+
  ;
+$message->attach(
+Swift_Attachment::fromPath($_FILES['file']['tmp_name'])->setFilename($_FILES['file']['name'])
+);
 debug_to_console( "created message" );
 
 $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 587, 'tls');
