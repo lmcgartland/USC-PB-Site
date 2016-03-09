@@ -190,7 +190,7 @@ $message = Swift_Message::newInstance()
   //->addPart('<q>Here is the message itself</q>', 'text/html')
 
   // Optionally add any attachments
-  //->attach(Swift_Attachment::fromPath($filename))
+  ->attach(Swift_Attachment::fromPath($filename))
  ;
 debug_to_console( "created message" );
 
@@ -216,7 +216,7 @@ catch (\Exception $e){
 debug_to_console( "DONE" );
 
 //done. redirect to thank-you page.
-//header('Location: thank-you.html');
+header('Location: thank-you.html');
 
 
 // Function to validate against any email injection attempts
