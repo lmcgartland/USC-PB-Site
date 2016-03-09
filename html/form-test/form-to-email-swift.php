@@ -169,8 +169,8 @@ $to = "luke.mcgartland@gmail.com";//<== update the email address
 // //$receipt_headers .= "";
 
 // mail($user_email,$email_subject,$receipt,$receipt_headers);
-$user_email = "mcgartla@usc.edu"
-$email_body = "test body"
+$user_email = "mcgartla@usc.edu";
+$email_body = "test body";
 
 debug_to_console( "about to create message" );
 
