@@ -171,6 +171,7 @@ $to = "luke.mcgartland@gmail.com";//<== update the email address
 // mail($user_email,$email_subject,$receipt,$receipt_headers);
 $user_email = "mcgartla@usc.edu";
 $email_body = "test body";
+$email_subject = "Test subject";
 
 debug_to_console( "about to create message" );
 
