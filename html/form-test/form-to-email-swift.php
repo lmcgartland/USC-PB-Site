@@ -127,10 +127,10 @@ $to = "luke.mcgartland@gmail.com";//<== update the email address
 // //Send the email!
 // mail($to,$email_subject,$message,$headers);
 
-$receipt = "Here is your receipt for your graphics request. Please send any follow up emails to pbgraphics@usc.edu and include your case number in the subject.\n\n$email_body";
+
+
 
 debug_to_console( "about to create message" );
-
 $message = Swift_Message::newInstance()
   // Give the message a subject
   ->setSubject($email_subject)
@@ -147,8 +147,13 @@ $message = Swift_Message::newInstance()
 $message->attach(
 Swift_Attachment::fromPath($_FILES['file']['tmp_name'])->setFilename($_FILES['file']['name'])
 );
-debug_to_console( "User email is [$user_email]" );
 
+
+
+
+
+$receipt = "Here is your receipt for your graphics request. Please send any follow up emails to pbgraphics@usc.edu and include your case number in the subject.\n\n$email_body";
+debug_to_console( "User email is [$user_email]" );
 $receipt_message = Swift_Message::newInstance()
   // Give the message a subject
   ->setSubject($email_subject)
@@ -163,37 +168,47 @@ $receipt_message = Swift_Message::newInstance()
   //->addPart('<q>Here is the message itself</q>', 'text/html')
  ;
 
+
+
+
+
 debug_to_console( "created message" );
+$user = "temp.web.pb@gmail.com";
+$pass = "iikwxuzlvqejlxic";
 
 $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 587, 'tls');
-$transport->setUsername('temp.web.pb@gmail.com');
-$transport->setPassword('iikwxuzlvqejlxic');
-
-debug_to_console( "created transport" );
-
+$transport->setUsername($user);
+$transport->setPassword($pass);
 $mailer = Swift_Mailer::newInstance($transport);
-debug_to_console( "created mailer" );
-
 try {
 	$result = $mailer->send($message);
 	debug_to_console($result);
-  $result2 = $mailer->send($receipt_message);
-  debug_to_console($result2);
-
-	debug_to_console( "Sent Messages" );
 }
 catch (\Exception $e){
 	debug_to_console( "Error" );
 	debug_to_console("{$e->getMessage()}");
 }
 
-debug_to_console( "DONE" );
+
+$mailer2 = Swift_Mailer::newInstance($transport);
+try {
+  $result2 = $mailer2->send($receipt_message);
+  debug_to_console($result2);
+}
+catch (\Exception $e){
+  debug_to_console( "Error" );
+  debug_to_console("{$e->getMessage()}");
+}
+
+
+
 
 //done. redirect to thank-you page.
 //header('Location: thank-you.html');
 
 
 // Function to validate against any email injection attempts
+
 function IsInjected($str)
 {
   $injections = array('(\n+)',
