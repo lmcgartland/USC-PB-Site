@@ -147,6 +147,7 @@ $message = Swift_Message::newInstance()
 $message->attach(
 Swift_Attachment::fromPath($_FILES['file']['tmp_name'])->setFilename($_FILES['file']['name'])
 );
+debug_to_console( "User email is [$user_email]" );
 
 $receipt_message = Swift_Message::newInstance()
   // Give the message a subject
