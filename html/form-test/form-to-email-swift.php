@@ -189,7 +189,7 @@ catch (\Exception $e){
 debug_to_console( "DONE" );
 
 //done. redirect to thank-you page.
-header('Location: thank-you.html');
+//header('Location: thank-you.html');
 
 
 // Function to validate against any email injection attempts
