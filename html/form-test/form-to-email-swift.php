@@ -9,8 +9,7 @@ if(!isset($_POST['submit']))
 	//This page should not be accessed directly. Need to submit the form.
 	echo "error; you need to submit the form!";
 }
-//$name = $_POST['name'];
-//$visitor_email = $_POST['email'];
+
 $message = $_POST['message'];
 
 $first_name = $_POST['first_name'];
@@ -56,43 +55,7 @@ if (!empty($other_artwork)) {
   $materials .= "- $other_artwork\n";
 }
 
-
-//$attachment = chunk_split(base64_encode(file_get_contents($_FILES['file']['tmp_name'])));
 $filename = $_FILES['file']['name'];
-
-
-/*$filename = str_replace(' ', '', $filename);
-
-if (strpos($filename, '0.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '1.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '2.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '3.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '4.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '5.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '6.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '7.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '8.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '9.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}*/
 
 date_default_timezone_set('America/Los_Angeles');
 //$date = date('m/d/Y h:i:s a', time());
@@ -164,38 +127,41 @@ $to = "luke.mcgartland@gmail.com";//<== update the email address
 // //Send the email!
 // mail($to,$email_subject,$message,$headers);
 
-// $receipt = "Here is your receipt for your graphics request. Please send any follow up emails to pbgraphics@usc.edu and include your case number in the subject.\n\n$email_body";
-// $receipt_headers = "From: pbgraphics@usc.edu \r\nReply-To: pbgraphics@usc.edu\r\n";
-// //$receipt_headers .= "";
-
-// mail($user_email,$email_subject,$receipt,$receipt_headers);
+$receipt = "Here is your receipt for your graphics request. Please send any follow up emails to pbgraphics@usc.edu and include your case number in the subject.\n\n$email_body";
 
 debug_to_console( "about to create message" );
 
 $message = Swift_Message::newInstance()
-
   // Give the message a subject
   ->setSubject($email_subject)
-
   // Set the From address with an associative array
   ->setFrom(array('temp.web.pb@gmail.com' => 'PB Graphics'))
-
+  ->setReplyTo(array('pbgraphics@usc.edu'=> 'PB Graphics'))
   // Set the To addresses with an associative array
-  ->setTo(array($to, $user_email))
-
+  ->setTo(array($to))
   // Give it a body
   ->setBody($email_body)
-
   // And optionally an alternative body
   //->addPart('<q>Here is the message itself</q>', 'text/html')
-
-  // Optionally add any attachments
-  //->attach(Swift_Attachment::fromPath($filename))
-
  ;
 $message->attach(
 Swift_Attachment::fromPath($_FILES['file']['tmp_name'])->setFilename($_FILES['file']['name'])
 );
+
+$receipt_message = Swift_Message::newInstance()
+  // Give the message a subject
+  ->setSubject($email_subject)
+  // Set the From address with an associative array
+  ->setFrom(array('temp.web.pb@gmail.com' => 'Do-not-reply-PB-Webmaster'))
+  ->setReplyTo(array('pbgraphics@usc.edu'=> 'PB Graphics'))
+  // Set the To addresses with an associative array
+  ->setTo(array($user_email))
+  // Give it a body
+  ->setBody($receipt)
+  // And optionally an alternative body
+  //->addPart('<q>Here is the message itself</q>', 'text/html')
+ ;
+
 debug_to_console( "created message" );
 
 $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 587, 'tls');
@@ -210,7 +176,10 @@ debug_to_console( "created mailer" );
 try {
 	$result = $mailer->send($message);
 	debug_to_console($result);
-	debug_to_console( "Sent Message" );
+  $result2 = $mailer->send($receipt_message);
+  debug_to_console($result2);
+
+	debug_to_console( "Sent Messages" );
 }
 catch (\Exception $e){
 	debug_to_console( "Error" );
