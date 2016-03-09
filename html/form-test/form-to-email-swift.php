@@ -3,132 +3,132 @@
 require_once './lib/swift_required.php';
 debug_to_console( "got the required" );
 
-//ini_set("include_path", '/home/uscedu5/php:' . ini_get("include_path")  );
-if(!isset($_POST['submit']))
-{
-	//This page should not be accessed directly. Need to submit the form.
-	echo "error; you need to submit the form!";
-}
-//$name = $_POST['name'];
-//$visitor_email = $_POST['email'];
-$message = $_POST['message'];
+// //ini_set("include_path", '/home/uscedu5/php:' . ini_get("include_path")  );
+// if(!isset($_POST['submit']))
+// {
+// 	//This page should not be accessed directly. Need to submit the form.
+// 	echo "error; you need to submit the form!";
+// }
+// //$name = $_POST['name'];
+// //$visitor_email = $_POST['email'];
+// $message = $_POST['message'];
 
-$first_name = $_POST['first_name'];
-$last_name = $_POST['last_name'];
-$user_email = $_POST['user_email'];
-$organization = $_POST['organization'];
+// $first_name = $_POST['first_name'];
+// $last_name = $_POST['last_name'];
+// $user_email = $_POST['user_email'];
+// $organization = $_POST['organization'];
 
-$event_title = $_POST['event_title'];
-$event_month = $_POST['event_month'];
-$event_date = $_POST['event_date'];
-$event_time = $_POST['event_time'];
-$event_location = $_POST['event_location'];
+// $event_title = $_POST['event_title'];
+// $event_month = $_POST['event_month'];
+// $event_date = $_POST['event_date'];
+// $event_time = $_POST['event_time'];
+// $event_location = $_POST['event_location'];
 
-$facebook_cover_photo = $_POST['facebook_cover_photo'];
-$profile_picture = $_POST['profile_picture'];
-$a_11x17_poster = $_POST['a_11x17_poster'];
-$snapchat_geofilter = $_POST['snapchat_geofilter'];
-$shirt_design = $_POST['shirt_design'];
-$other_artwork = $_POST['other_artwork'];
+// $facebook_cover_photo = $_POST['facebook_cover_photo'];
+// $profile_picture = $_POST['profile_picture'];
+// $a_11x17_poster = $_POST['a_11x17_poster'];
+// $snapchat_geofilter = $_POST['snapchat_geofilter'];
+// $shirt_design = $_POST['shirt_design'];
+// $other_artwork = $_POST['other_artwork'];
 
-$description = $_POST['description'];
-$other_notes = $_POST['other_notes'];
-$deadline = $_POST['deadline'];
-
-
-$materials = "";
-if (!empty($facebook_cover_photo)) {
-  $materials .= "- $facebook_cover_photo\n";
-}
-if (!empty($profile_picture)) {
-  $materials .= "- $profile_picture\n";
-}
-if (!empty($a_11x17_poster)) {
-  $materials .= "- $a_11x17_poster\n";
-}
-if (!empty($snapchat_geofilter)) {
-  $materials .= "- $snapchat_geofilter\n";
-}
-if (!empty($shirt_design)) {
-  $materials .= "- $shirt_design\n";
-}
-if (!empty($other_artwork)) {
-  $materials .= "- $other_artwork\n";
-}
+// $description = $_POST['description'];
+// $other_notes = $_POST['other_notes'];
+// $deadline = $_POST['deadline'];
 
 
-$attachment = chunk_split(base64_encode(file_get_contents($_FILES['file']['tmp_name'])));
-$filename = $_FILES['file']['name'];
+// $materials = "";
+// if (!empty($facebook_cover_photo)) {
+//   $materials .= "- $facebook_cover_photo\n";
+// }
+// if (!empty($profile_picture)) {
+//   $materials .= "- $profile_picture\n";
+// }
+// if (!empty($a_11x17_poster)) {
+//   $materials .= "- $a_11x17_poster\n";
+// }
+// if (!empty($snapchat_geofilter)) {
+//   $materials .= "- $snapchat_geofilter\n";
+// }
+// if (!empty($shirt_design)) {
+//   $materials .= "- $shirt_design\n";
+// }
+// if (!empty($other_artwork)) {
+//   $materials .= "- $other_artwork\n";
+// }
 
 
-$filename = str_replace(' ', '', $filename);
+// $attachment = chunk_split(base64_encode(file_get_contents($_FILES['file']['tmp_name'])));
+// $filename = $_FILES['file']['name'];
 
-if (strpos($filename, '0.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '1.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '2.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '3.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '4.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '5.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '6.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '7.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '8.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
-if (strpos($filename, '9.') !== false){
-  $filename = str_replace('.', 'c.', $filename);
-}
 
-date_default_timezone_set('America/Los_Angeles');
-//$date = date('m/d/Y h:i:s a', time());
-$date = date('YmdHis');
+// $filename = str_replace(' ', '', $filename);
 
-//Validate first
-if(empty($first_name)||empty($last_name)||empty($user_email)) 
-{
-    echo "Name and email are mandatory!";
-    exit;
-}
+// if (strpos($filename, '0.') !== false){
+//   $filename = str_replace('.', 'c.', $filename);
+// }
+// if (strpos($filename, '1.') !== false){
+//   $filename = str_replace('.', 'c.', $filename);
+// }
+// if (strpos($filename, '2.') !== false){
+//   $filename = str_replace('.', 'c.', $filename);
+// }
+// if (strpos($filename, '3.') !== false){
+//   $filename = str_replace('.', 'c.', $filename);
+// }
+// if (strpos($filename, '4.') !== false){
+//   $filename = str_replace('.', 'c.', $filename);
+// }
+// if (strpos($filename, '5.') !== false){
+//   $filename = str_replace('.', 'c.', $filename);
+// }
+// if (strpos($filename, '6.') !== false){
+//   $filename = str_replace('.', 'c.', $filename);
+// }
+// if (strpos($filename, '7.') !== false){
+//   $filename = str_replace('.', 'c.', $filename);
+// }
+// if (strpos($filename, '8.') !== false){
+//   $filename = str_replace('.', 'c.', $filename);
+// }
+// if (strpos($filename, '9.') !== false){
+//   $filename = str_replace('.', 'c.', $filename);
+// }
 
-if(IsInjected($user_email))
-{
-    debug_to_console( "EMAIL INJECTED" );
-    echo "Bad email value!";
-    exit;
-}
+// date_default_timezone_set('America/Los_Angeles');
+// //$date = date('m/d/Y h:i:s a', time());
+// $date = date('YmdHis');
 
-//$email_from = 'mcgartla@usc.edu';//<== update the email address
-$email_subject = "Graphics Request Case $date";
-$email_body = "Graphics Request Details:\n\n".
-    "Name: $first_name $last_name\n".
-    "Email: $user_email\n".
-    "Organization: $organization\n".
-    "Event Details: \n".
-    "$event_title\n".
-    "$event_month $event_date $event_time\n".
-    "$event_location\n\n".
-    "Required Materials:\n".
-    "$materials\n".
-    "Description\n".
-    "$description\n\n".
-    "Other Notes\n".
-    "$other_notes\n".
-    "Deadline: $deadline";
+// //Validate first
+// if(empty($first_name)||empty($last_name)||empty($user_email)) 
+// {
+//     echo "Name and email are mandatory!";
+//     exit;
+// }
+
+// if(IsInjected($user_email))
+// {
+//     debug_to_console( "EMAIL INJECTED" );
+//     echo "Bad email value!";
+//     exit;
+// }
+
+// //$email_from = 'mcgartla@usc.edu';//<== update the email address
+// $email_subject = "Graphics Request Case $date";
+// $email_body = "Graphics Request Details:\n\n".
+//     "Name: $first_name $last_name\n".
+//     "Email: $user_email\n".
+//     "Organization: $organization\n".
+//     "Event Details: \n".
+//     "$event_title\n".
+//     "$event_month $event_date $event_time\n".
+//     "$event_location\n\n".
+//     "Required Materials:\n".
+//     "$materials\n".
+//     "Description\n".
+//     "$description\n\n".
+//     "Other Notes\n".
+//     "$other_notes\n".
+//     "Deadline: $deadline";
     
 
 
@@ -169,6 +169,8 @@ $to = "luke.mcgartland@gmail.com";//<== update the email address
 // //$receipt_headers .= "";
 
 // mail($user_email,$email_subject,$receipt,$receipt_headers);
+$user_email = "mcgartla@usc.edu"
+$email_body = "test body"
 
 debug_to_console( "about to create message" );
 
@@ -190,11 +192,11 @@ $message = Swift_Message::newInstance()
   //->addPart('<q>Here is the message itself</q>', 'text/html')
 
   // Optionally add any attachments
-  ->attach(Swift_Attachment::fromPath($filename))
+  //->attach(Swift_Attachment::fromPath($filename))
  ;
 debug_to_console( "created message" );
 
-$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 25, 'tls');
+$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 587, 'tls');
 $transport->setUsername('temp.web.pb@gmail.com');
 $transport->setPassword('iikwxuzlvqejlxic');
 
