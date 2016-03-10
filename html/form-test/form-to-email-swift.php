@@ -80,10 +80,12 @@ $email_subject = "Graphics Request Case $date";
 $email_body = "Graphics Request Details:\n\n".
     "Name: $first_name $last_name\n".
     "Email: $user_email\n".
-    "Organization: $organization\n".
-    "Event Details: \n".
+    "Organization: $organization\n\n".
+    "Event Title: \n".
     "$event_title\n".
+    "Event Time: \n".
     "$event_month $event_date $event_time\n".
+    "Event Location: \n".
     "$event_location\n\n".
     "Required Materials:\n".
     "$materials\n".

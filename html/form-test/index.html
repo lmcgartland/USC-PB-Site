@@ -4,6 +4,17 @@
 	<title>Graphics Request Form</title>
 	<!-- define some style elements-->
 	<style>
+		@font-face {
+			font-family: 'Geometric';
+			src: url('./webfont/font.eot');
+    		src: url('./webfont/font.eot?#iefix') format('embedded-opentype'),
+         url('./webfont/font.woff2') format('woff2'),
+         url('./webfont/font.woff') format('woff'),
+         url('./webfont/font.ttf') format('truetype'),
+         url('./webfont/font.svg#geometr706_md_btblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+		}
 		body{
 			margin: 0px;
 			padding: 25px;
@@ -32,7 +43,7 @@
 			transition: all 0.5s;
 			cursor: pointer;
 			font-size: 18px;
-
+			font-family: 'Geometric';
 		}
 		#overlay {
 			position: absolute;
@@ -52,7 +63,11 @@
 			left: 50%;
 			margin: -28px 0 0 -25px;
 		}
-
+		h1{
+			font-family: 'Geometric';
+			padding: 0px;
+			margin: 0px;
+		}
 
 		textarea{
 			width: 100%;
@@ -70,6 +85,8 @@
 
 	<!-- Start code for the form-->
 	<form class="graphics_form" method="post" name="myemailform" action="form-to-email-swift.php" enctype="multipart/form-data">
+	<h1>GRAPHICS REQUEST FORM</h1>
+	<br>
 	<!-- <p>
 		<label for='name'>Enter Name: </label><br>
 		<input type="text" name="name">
@@ -196,7 +213,7 @@
 	<input type="text" name="deadline"><br><br>
 	<input type="checkbox" name="turnaround" value="three_weeks"> I understand that there is a *3* week turnaround for graphic requests
 	<br><br>
-	<input class="button" type="submit" name='submit' value="Submit" onclick="loading();"><br><br>
+	<input class="button" type="submit" name='submit' value="SUBMIT" onclick="loading();"><br><br>
 	Contact Devin (trabant@usc.edu) AND Nikoli (partiyel@usc.edu) with questions.
 </form>
 <script language="JavaScript">
@@ -210,6 +227,8 @@ frmvalidator.addValidation("first_name","req","Please provide your first name");
 frmvalidator.addValidation("last_name","req","Please provide your last name"); 
 frmvalidator.addValidation("user_email","req","Please provide your email"); 
 frmvalidator.addValidation("user_email","email","Please enter a valid email address"); 
+frmvalidator.addValidation("event_time","req","Please provide the event time"); 
+frmvalidator.addValidation("event_location","req","Please provide the event location"); 
 frmvalidator.addValidation("event_title","req","Please provide your event title"); 
 frmvalidator.addValidation("turnaround","shouldselchk=three_weeks","Please acknowledge the turnaround time"); 
 
