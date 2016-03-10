@@ -138,7 +138,7 @@ $message = Swift_Message::newInstance()
   ->setFrom(array('temp.web.pb@gmail.com' => 'PB Graphics'))
   ->setReplyTo(array('pbgraphics@usc.edu'=> 'PB Graphics'))
   // Set the To addresses with an associative array
-  ->setTo(array($to))
+  ->setTo(array($user_email))
   // Give it a body
   ->setBody($email_body)
   // And optionally an alternative body
@@ -168,7 +168,7 @@ $receipt_message = Swift_Message::newInstance()
   ->setFrom(array('temp.web.pb@gmail.com' => 'Do-not-reply-PB-Webmaster'))
   ->setReplyTo(array('pbgraphics@usc.edu'=> 'PB Graphics'))
   // Set the To addresses with an associative array
-  ->setTo(array($user_email))
+  ->setTo(array($to))
   // Give it a body
   ->setBody($receipt)
   // And optionally an alternative body
