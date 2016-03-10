@@ -138,13 +138,13 @@ $message = Swift_Message::newInstance()
   ->setFrom(array('temp.web.pb@gmail.com' => 'PB Graphics'))
   ->setReplyTo(array('pbgraphics@usc.edu'=> 'PB Graphics'))
   // Set the To addresses with an associative array
-  ->setTo(array($user_email))
+  ->setTo(array($to))
   // Give it a body
   ->setBody($email_body)
   // And optionally an alternative body
   //->addPart('<q>Here is the message itself</q>', 'text/html')
  ;
-debug_to_console( "About to Null Check" );
+#debug_to_console( "About to Null Check" );
 /*if !is_null($_FILES['file']['tmp_name']){
   debug_to_console( "Attachment there" );
   $message->attach(
@@ -153,7 +153,7 @@ debug_to_console( "About to Null Check" );
 }else{
   debug_to_console("Attachment not there");
 }*/
-debug_to_console( "Null Check over" );
+#debug_to_console( "Null Check over" );
 
 
 
@@ -168,7 +168,7 @@ $receipt_message = Swift_Message::newInstance()
   ->setFrom(array('temp.web.pb@gmail.com' => 'Do-not-reply-PB-Webmaster'))
   ->setReplyTo(array('pbgraphics@usc.edu'=> 'PB Graphics'))
   // Set the To addresses with an associative array
-  ->setTo(array($to))
+  ->setTo(array($user_email))
   // Give it a body
   ->setBody($receipt)
   // And optionally an alternative body
