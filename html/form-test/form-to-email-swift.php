@@ -144,15 +144,16 @@ $message = Swift_Message::newInstance()
   // And optionally an alternative body
   //->addPart('<q>Here is the message itself</q>', 'text/html')
  ;
- debug_to_console($_FILES['file']['tmp_name']);
- if !is_null($_FILES['file']['tmp_name']){
+debug_to_console( "About to Null Check" );
+if !is_null($_FILES['file']['tmp_name']){
+  debug_to_console( "Attachment there" );
   $message->attach(
     Swift_Attachment::fromPath($_FILES['file']['tmp_name'])->setFilename($_FILES['file']['name'])
   );
- }else{
-  debug_to_console("NULL File");
- }
-
+}else{
+  debug_to_console("Attachment not there");
+}
+debug_to_console( "Null Check over" );
 
 
 
