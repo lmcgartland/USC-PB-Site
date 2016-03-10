@@ -219,7 +219,7 @@ catch (\Exception $e){
 
 
 //done. redirect to thank-you page.
-//header('Location: thank-you.html');
+header('Location: thank-you.html');
 
 
 // Function to validate against any email injection attempts
@@ -247,11 +247,11 @@ function IsInjected($str)
 }
 function debug_to_console( $data ) {
 
-    if ( is_array( $data ) )
+    /*if ( is_array( $data ) )
         $output = "<script>console.log( 'Debug Objects: " . implode( ',', $data) . "' );</script>";
     else
         $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
 
-    echo $output;
+    echo $output;*/
 }
 ?> 
