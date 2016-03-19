@@ -1,0 +1,354 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  color: #5a5a5a;
+  font-family: "Nunito";
+  background-color: #222222;
+
+}
+h1, h2, h3{
+  font-family: "Geometr706 Md BT";
+  text-transform: uppercase;
+  
+}
+h1{
+  text-shadow: rgba(0, 0, 0, 0.7) 0px 0px 10px;
+}
+.carousel-caption > h1{
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 30px;
+  font-size: 70px;
+}
+a:hover{
+  /*border-bottom: #c1ff00 2px solid;*/
+  text-decoration: none;
+}
+.navbar-brand{
+  position: absolute;
+  height: 80px;
+}
+.navbar-collapse {
+  text-align:center;
+
+}
+.navbar-nav {
+    display:inline-block;
+    float:none;
+
+}
+.navbar-nav > li > a {
+   line-height: 50px;
+}
+.btn{
+    border-radius: 30px;
+}
+.btn-primary{
+  
+  background-color: #222222;
+  border-color: #CCCCCC;
+  color: white;
+  font-family: "Geometr706 Md BT";
+  text-transform: uppercase;
+  border-radius: 30px;
+}
+.btn-primary:hover{
+  background-color: rgba(0, 0, 0, 1);
+  border-color: #CCCCCC;
+  background-color: #AA0000;
+  border-color: #880000;
+}
+
+#cazza1 {
+  height: 700px;
+  background-image: url("teal.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+#cazza2 {
+  height: 700px;
+  background-image: url("ball4.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+#cazza3 {
+  height: 700px;
+  background-image: url("purple.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+#cazza4 {
+  height: 700px;
+  background-image: url("SpringFest.png");
+  background-position: center center;
+  background-size: cover;
+}
+div.container.marketing{
+  padding: 0px;
+  margin: 0px;
+  width: 100vw;
+}
+.container { 
+  padding: 0px;
+}
+.row{
+  padding: 0px;
+  margin: 0px;
+}
+.fbheaderimage{
+  width: 100%;
+  height: 50%;
+}
+[class*="col-"] {
+  padding: 0px;
+  margin: 0px;
+
+}
+.footer{
+  background-color: #222222;
+}
+.yellow{
+  background-color: #EEEEEE;
+}
+.black{
+  background-color: #222222;
+  color: #CCCCCC;
+  padding: 30px;
+}
+.black h3{
+  color: #DDDDDD;
+}
+.events{
+  background-color: #222222;
+  color: #CCCCCC;
+}
+.events h2{
+  color: #FFFFFF;
+  margin: 10px;
+}
+.events .btn{
+  border-color: #888888;
+  color: #888888;
+  font-family: "Geometr706 Md BT";
+  text-transform: uppercase;
+  background-color: #222222;
+}
+.events .btn:hover{
+  border-color: #CCCCCC;
+  background-color: #FFFFFF;
+  color: #000000;
+
+}
+.social-media{
+  text-align: center;
+}
+#twitter{
+  background-color: #FFCC00;
+}
+#tumblr{
+  background-color: #BC03CD;
+}
+#fb{
+  background-color: #089C94;
+}
+#insta{
+  background-color: #005867;
+}
+.social-media img{
+  height: 60px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pb-photo{
+  text-align: center;
+  background-image: url(Pb2.jpg);
+  background-color: #F5F5F5;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding-bottom: 40% !important;
+}
+.spring-fest{
+    text-align: center;
+  background-image: url(SpringFest.jpg);
+  background-color: #a7ce7f;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding-bottom: 36% !important;
+}
+.darkgreen-text{
+  color: #30431c;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: relative;
+}
+
+a, a:link, a:visited, a:hover, a:active{
+    text-decoration: none;
+}
+.horizontal{
+    display: block; 
+    padding: 5px 0;
+    clear: both;
+}
+.horizontal li{
+    float: left;
+    padding-right: 25px;
+    line-height: 25px;
+
+}
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-collapse.collapse:not(.in){
+  height: 80px !important;
+}
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+  min-height: 80px;
+  margin-bottom: 0px;
+
+}
+.navbar-header{
+  height: 80px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+  margin-bottom: 0px;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+#myCarousel{
+  height: 700px;
+
+}
+.carousel .item {
+  height: 700px;
+  background-color: #777;
+
+}
+.carousel-inner > .item > img {
+  position: absolute;
+   top: 0px;
+   left: 0;
+   min-width: 100%;
+   min-height: 700px;
+
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+.featurette{
+  padding: 50px;
+  margin: 0px;
+}
+.featurette-divider {
+  /*margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+/*Footer
+-------------------------------------------------- */
+/*.footer{
+  background-color: #000000 !important;
+  color: white;
+}*/
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    /*border-radius: 4px;*/
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    /*margin-top: 120px;*/
+  }
+}
