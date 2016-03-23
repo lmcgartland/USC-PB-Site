@@ -28,7 +28,7 @@ h1{
 }
 .carousel-caption > h1{
   text-shadow: rgba(0, 0, 0, 0.1) 0px 0px 30px;
-  font-size: 80px;
+  font-size: 40px;
 }
 a:hover{
   /*border-bottom: #c1ff00 2px solid;*/
@@ -386,5 +386,10 @@ a, a:link, a:visited, a:hover, a:active{
 @media (min-width: 992px) {
   .featurette-heading {
     /*margin-top: 120px;*/
+    font-size: 60px;
+  }
+  .carousel-caption > h1{
+  	text-shadow: rgba(0, 0, 0, 0) 0px 0px 30px;
+  	font-size: 80px;
   }
 }
