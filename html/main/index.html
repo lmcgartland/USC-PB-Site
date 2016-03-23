@@ -86,7 +86,6 @@
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
 
       </ol>
       <div class="carousel-inner" role="listbox">
@@ -111,20 +110,14 @@
         <div class="item" id="cazza3">
           <div class="container">
             <div class="carousel-caption">
+
               <h1>Subscribe To Our Calendar</h1>
               <p>Learn about all the great events happening on campus before anyone else.</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">SUBSCRIBE</a></p>
             </div>
           </div>
         </div>
-        <div class="item" id="cazza4">
-          <div class="container">
-            <div class="carousel-caption">
-
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">LEARN MORE</a></p>
-            </div>
-          </div>
-        </div>
+        
       </div>
 
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -148,23 +141,26 @@
       <div class="row events">
         <div class="col-lg-4">
           <img class="fbheaderimage" src="cover1.png" alt="Generic placeholder image" width="140" height="140">
-          <h2>Take Back the Night</h2>
-          <p>This series of workshops and programs is dedicated to victims and survivors of sexual violence and gender based harm as well as their allies and loved ones.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <h3 class="eventTitle">Take Back the Night</h2>
+          <p class="eventDescription">This series of workshops and programs is dedicated to victims and survivors of sexual violence and gender based harm as well as their allies and loved ones.</p>
+          <p><a class="btn btn-default eventLink" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="fbheaderimage" src="cover3.png" alt="Generic placeholder image" width="140" height="140">
-          <h2>InspirED: EdMonth Kickoff</h2>
-          <p>Join ACA's EdMonth and SEC in celebrating the arts in education, as well as under-appreciated curriculum in our educational system. Have fun in our booths with music, arts, and exercise!</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <h3 class="eventTitle">InspirED: EdMonth Kickoff</h2>
+          <p class="eventDescription">Join ACA's EdMonth and SEC in celebrating the arts in education, as well as under-appreciated curriculum in our educational system. Have fun in our booths with music, arts, and exercise!</p>
+          <p><a class="btn btn-default eventLink" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="fbheaderimage" src="cover2.png" alt="Generic placeholder image" width="140" height="140">
-          <h2>COLOUR Concert with Tory Lanez</h2>
-          <p>Colour is a unique production that brings to life the fusion of music and technology across an eclectic mix of mediums. This is an event you don't want to miss!</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <h3 class="eventTitle">COLOUR Concert with Tory Lanez</h2>
+          <p class="eventDescription">Colour is a unique production that brings to life the fusion of music and technology across an eclectic mix of mediums. This is an event you don't want to miss!</p>
+          <p><a class="btn btn-default eventLink" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
+
       </div><!-- /.row -->
+      
+      
 
       <div class="row social-media">
         <div class="col-xs-6 col-sm-3" id="insta">
@@ -193,14 +189,7 @@
         </div>
         <div class="hidden-sm col-md-2"></div>
       </div>
-      <div class="row featurette spring-fest">
-       <div class="hidden-sm col-md-3"></div>
-       <div class="col-md-6 col-sm-12">
-        <h2 class="featurette-heading"> <span class="darkgreen-text">SPRING FORWARD.<br>KICK BACK.</span></h2>
-        <p class="lead">Join us for our signature full-day music festival with your favorite acts, sick vendors, and some dank #eeeeeeats. You’re NOT gonna want to miss this one!</p>
-      </div>
-      <div class="hidden-sm col-md-3"></div>
-    </div>
+      
 
       <!--<div class="row featurette yellow">
         <div class="col-md-7 col-md-push-5">
@@ -267,5 +256,31 @@
     <script src="../assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script type="text/javascript" src="./data/facebook.js"></script>
+    <script type="text/javascript">
+      
+    console.log(facebookEvents);
+    $( ".events .eventTitle" ).each(function( index ) {
+      $( this ).html(facebookEvents[index]["name"]);
+      
+    });
+    $( ".events .eventDescription" ).each(function( index ) {
+      var length = 100;
+      var description = facebookEvents[index]["description"].substring(0, length) +"..."
+      $( this ).html(description);
+      
+    });
+    $( ".events .eventLink" ).each(function( index ) {
+      var link = "https://www.facebook.com/events/" +facebookEvents[index]["id"]+"/"
+      $( this ).attr("href",link);
+      
+    });
+    $( ".events .fbheaderimage" ).each(function( index ) {
+      var link = facebookEventCovers[index]
+      $( this ).attr("src",link);
+      
+    });
+
+    </script>
   </body>
   </html>
