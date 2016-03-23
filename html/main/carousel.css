@@ -62,20 +62,21 @@ a:hover{
 
 #cazza1 {
   height: 700px;
-  background-image: url("Cover1.jpg");
-  background-position: center center;
+  background-image: url("Cover11.jpg");
+  background-position: center top;
   background-size: cover;
+  
 }
 #cazza2 {
   height: 700px;
-  background-image: url("Cover3.jpg");
-  background-position: center center;
+  background-image: url("Cover6.jpg");
+  background-position: center top;
   background-size: cover;
 }
 #cazza3 {
   height: 700px;
-  background-image: url("Cover4.jpg");
-  background-position: center center;
+  background-image: url("Cover7.jpg");
+  background-position: center top;
   background-size: cover;
 }
 #cazza4 {
@@ -92,6 +93,10 @@ div.container.marketing{
 }
 .container { 
   padding: 0px;
+}
+
+.item .container{
+
 }
 .row{
   padding: 0px;
@@ -156,16 +161,16 @@ div.container.marketing{
   text-align: center;
 }
 #twitter{
-  background-color: #FFCC00;
+  background-color: #333;
 }
 #tumblr{
-  background-color: #BC03CD;
+  background-color: #333;
 }
 #fb{
-  background-color: #089C94;
+  background-color: #333;
 }
 #insta{
-  background-color: #005867;
+  background-color: #333;
 }
 .social-media img{
   height: 60px;
