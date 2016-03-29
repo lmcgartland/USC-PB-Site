@@ -21,10 +21,12 @@ body {
 h1, h2, h3{
   font-family: "Geometr706 Md BT";
   text-transform: uppercase;
-  
 }
 h1{
   /*text-shadow: rgba(0, 0, 0, 0.7) 0px 0px 10px;*/
+}
+h3{
+  color: #EDEDED;
 }
 .carousel-caption > div > h1{
   text-shadow: rgba(0, 0, 0, 0.1) 0px 0px 30px;
@@ -153,7 +155,7 @@ div.container.marketing{
   padding-left: 20px;
   padding-right: 20px;
 }
-.events .col-lg-4{
+.col-lg-4{
   padding-right: 20px;
   padding-left: 20px;
 }
@@ -175,6 +177,9 @@ div.container.marketing{
   background-color: #FFFFFF;
   color: #000000;
 
+}
+.eventTitle{
+    text-align: center;
 }
 .social-media{
   text-align: center;
@@ -215,13 +220,7 @@ div.container.marketing{
   background-position: bottom;
   padding-bottom: 36% !important;
 }
-.darkgreen-text{
-  color: #30431c;
-}
-.events div{
-/*  background-color: blue;
-*/
-}
+
 .events > col-lg-4{
   background-color: green;
 }

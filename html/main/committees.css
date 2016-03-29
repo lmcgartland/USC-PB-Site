@@ -1,0 +1,86 @@
+.description{
+  color: #CCCCCC;
+  font-weight: lighter;
+}
+.logos{
+  width: 100%;
+  height: 250px;
+  margin-top: 20px;
+}
+.content{
+  text-align: left;
+}
+.social-container{
+  padding: 20px;
+  text-align: center;
+}
+.committees{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+  margin-top: 20px;
+}
+.speaker{
+  background-color: #BE1E2E;
+  background: linear-gradient(to bottom right, #BE1E2E, #EB1E31);
+
+}
+.pac{
+  background-color: #6294CE;
+  background: linear-gradient(to bottom right, #6294CE, #A5DAD5);
+}
+.sec{
+  background-color: #EEEEEE;
+  background: linear-gradient(to bottom right, #1F3363, #AD2F92);
+
+}
+.tp{
+  background-color: #181313;
+  background: linear-gradient(to top left, #181313, #8E1732);
+
+}
+.concerts{
+  background-color: #81C441;
+  background: linear-gradient(to bottom right, #5FBE81, #CDDF65);
+
+}
+
+
+
+.guitar{
+  background-image: url(img/stock/guitar.jpg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #ffffff;
+}
+.vince{
+  background-image: url(img/stock/vince.jpg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: #FFFFFF;
+  padding-bottom: 36% !important;
+
+
+}
+.speakersEvent{
+  background-image: url(img/stock/speakers.jpg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: #FFFFFF;
+  padding-bottom: 36% !important;
+
+}
+.band{
+  background-image: url(img/stock/band.jpg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #FFFFFF;
+  padding-bottom: 36% !important;
+
+}
