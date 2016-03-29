@@ -34,3 +34,13 @@
   background-color: #A0C3D2;
   background: linear-gradient(to bottom right, #A0C3D2, #B39BC8);
 }
+
+
+.nightMarket{
+  background-image: url(img/stock/nightMarket.jpg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: #FFFFFF;
+  padding-bottom: 36% !important;
+}
