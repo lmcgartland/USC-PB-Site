@@ -1,0 +1,77 @@
+.content-container{
+
+}
+.profile-container{
+  display: block;
+
+}
+.profile-container img{
+  width: 100%;
+  height: auto;
+}
+.profile-container .profile-info{
+  position: absolute;
+  top:0px;
+  height: auto;
+  left: 0px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.8);
+  padding: 5px;
+  color: #000;
+  display: none;
+}
+.contact-header{
+  /*background-image: url(img/stock/fans3.jpg);*/
+  background-color: #FFF;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #333;
+  margin-top: 70px;
+  text-align: left;
+}
+.contact-header p{
+  color: #333;
+}
+.contact-header h3{
+  color: #333;
+}
+.contact-header .icon-text{
+  color: #333;
+}
+.contact-header div{
+  padding: 15px;
+}
+
+
+.primary-contact-section div{
+  padding: 20px;
+}
+.secondary-contact-section{
+  padding: 30px;
+  background-color: #8F1A32;
+}
+h5{
+  font-size: 13pt;
+  color: white;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+li{
+  color: #999;
+}
+.icon-text{
+  color: #FFFFFF;
+  font-size: 10pt;
+  font-weight: lighter;
+}
+
+
+/*[class*="col-"] {
+  padding: 0px;
+  margin: 0px;
+
+}*/
+.secondary-contact-section div{
+  padding: 10px;
+  min-height: 140pt;
+}

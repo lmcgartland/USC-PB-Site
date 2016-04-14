@@ -51,10 +51,11 @@
 
 .guitar{
   background-image: url(img/stock/guitar.jpg);
-  background-size: 100% auto;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   color: #ffffff;
+
 }
 .vince{
   background-image: url(img/stock/vince.jpg);
@@ -68,11 +69,26 @@
 }
 .speakersEvent{
   background-image: url(img/stock/speakers.jpg);
-  background-size: 100% auto;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
   color: #FFFFFF;
-  padding-bottom: 36% !important;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10% !important;
+
+}
+.pbAbout{
+  background-image: url(img/stock/climb.jpg);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  color: #FFFFFF;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
 
 }
 .band{

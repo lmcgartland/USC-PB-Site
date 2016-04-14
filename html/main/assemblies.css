@@ -38,9 +38,12 @@
 
 .nightMarket{
   background-image: url(img/stock/nightMarket.jpg);
-  background-size: 100% auto;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
   color: #FFFFFF;
-  padding-bottom: 36% !important;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10% !important;
 }

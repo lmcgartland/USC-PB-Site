@@ -1,0 +1,33 @@
+.content-container{
+
+}
+.profile-container{
+  display: block;
+
+}
+.profile-container img{
+  width: 100%;
+  height: auto;
+}
+.profile-container .profile-info{
+  position: absolute;
+  top:0px;
+  height: auto;
+  left: 0px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.8);
+  padding: 5px;
+  color: #000;
+  display: none;
+}
+.fans{
+  /*background-image: url(img/stock/fans3.jpg);*/
+  background-color: #FFF;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #333;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+}

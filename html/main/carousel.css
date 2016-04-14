@@ -350,6 +350,7 @@ a, a:link, a:visited, a:hover, a:active{
 .featurette{
   padding: 50px;
   margin: 0px;
+  height: auto;
 }
 .featurette-divider {
   /*margin: 80px 0; /* Space out the Bootstrap <hr> more */
